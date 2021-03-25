@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.BubbleChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import java.lang.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pp_lab4_zad2.FXMLDocumentController">
+
+    <children>
+        <TextField fx:id="A" layoutX="37.0" layoutY="27.0" onAction="#handleTextField" promptText="A" />
+        <TextField fx:id="B" layoutX="37.0" layoutY="77.0" onAction="#handleTextField" promptText="B" />
+        <TextField fx:id="C" layoutX="37.0" layoutY="124.0" onAction="#handleTextField" promptText="C" />
+        <Button fx:id="OK" layoutX="174.0" layoutY="176.0" mnemonicParsing="false"  text="OK" />
+        <Label fx:id="label" layoutX="70" layoutY="240" minHeight="16" minWidth="69" />
+        
+        <ComboBox fx:id="Select" layoutX="37.0" layoutY="176.0" promptText="wybierz" >
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Scatter"/>
+                    <String fx:value="Line"/>
+                    <String fx:value="Area"/>
+              <!---  <MenuItem mnemonicParsing="false" text="Scatter" fx:id="Scatter"/>
+                <MenuItem mnemonicParsing="false" text="Line" fx:id="Line"/>
+                <MenuItem mnemonicParsing="false" text="Bar" fx:id="Bar"/> !-->
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <GridPane fx:id="grid" />
+        <ScatterChart  layoutX="240.0" layoutY="10.0" prefHeight="320.0" prefWidth="399.0" fx:id="sc">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="CategoryAxisChart"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" fx:id="NumberAxisChart"/>
+            </yAxis>
+        </ScatterChart>
+        <LineChart  layoutX="240.0" layoutY="10.0" prefHeight="320.0" prefWidth="399.0" fx:id="lc">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="CategoryAxisLine"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" fx:id="NumberAxisLine"/>
+            </yAxis>
+        </LineChart>
+        <AreaChart   layoutX="240.0" layoutY="10.0" prefHeight="320.0" prefWidth="399.0" fx:id="ac">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="CategoryAxisArea"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" fx:id="NumberAxisArea"/>
+            </yAxis>
+        </AreaChart> 
+    </children>
+</Pane>
